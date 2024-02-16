@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Сергей Артеменков](https://up.htmlacademy.ru/javascript/31/user/2193725).
-* Наставник: `Неизвестно`.
+* Наставник:  `Евгений Лепёшкин`.(https://htmlacademy.ru/profile/spearance)
 
 ---
 
