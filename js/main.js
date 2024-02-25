@@ -56,43 +56,55 @@ const avatars = {
     MAX: 6
 };
 
-const
-
 let photos = [];
+let comments = [];
 
 const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const addPhoto = (id) => ({
     id: id,
     url: 'photos/${id}.jpg'
-    description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)]
+    description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)],
     likes: getRandomInteger(Likes.MIN, Likes.MAX),
-    comments: getaddComments()
+    comments: getAddComments(0, 30),
 });
 
-const addPhotos = => {
+const addPhotos = () => {
     for (let i = 1; i <= COUNT; i++) {
         photos.push(addPhoto(i));
     }
 };
 
-let comments = [];
 
 const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const addComment = (id) => ({
-  id: id,
-  avatar: 'img/avatar/${id}.svg'
-  message: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)]
-  names: getRandomInteger(Names.MIN, Names.MAX),
+const addComment = () => ({
+  id: getRandomNumber(1, 100),
+  avatar: 'img/avatar/${getRandomNumber(1, 6)}.svg'
+  message: MESSAGES[getRandomInteger(0, MESSAGES.length - 1)]
+  names: NAMES[getRandomInteger(0, NAMES.length - 1)]
 });
 
-const addComments = => {
-  for (let i = 1; i <= COUNT; i++) {
-      coments.push(addPhoto(i));
+const addComments = () => {
+  for (let i = 1; i <= MESSAGES; i++) {
+      comments.push(addComment(i));
   }
 };
 
 
 
 addPhotos();
+
+
+
+// const getRandomArrayElement = (element) =>[getRandomInteger(0, element.length - 1)];
+
+// const getObjectComments = () => {
+//   const objectComments = {
+//     id: id,
+//     avatar: 'img/avatar/${getRandomInteger(1, 6)}.svg',
+//     message: getRandomArrayElement(MESSAGES),
+//     names: getRandomArrayElement(NAMES),
+//   };
+//   return objectComments;
+// }
