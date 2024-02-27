@@ -51,10 +51,16 @@ const Likes = {
     MAX: 200
 };
 
-const avatars = {
+const Avatars = {
     MIN: 1,
     MAX: 6
 };
+
+const Comments = {
+    MIN: 0,
+    MAX: 30
+};
+
 
 let photos = [];
 let comments = [];
@@ -91,20 +97,6 @@ const addComments = () => {
   }
 };
 
-
-
 addPhotos();
 
 
-
-// const getRandomArrayElement = (element) =>[getRandomInteger(0, element.length - 1)];
-
-// const getObjectComments = () => {
-//   const objectComments = {
-//     id: id,
-//     avatar: 'img/avatar/${getRandomInteger(1, 6)}.svg',
-//     message: getRandomArrayElement(MESSAGES),
-//     names: getRandomArrayElement(NAMES),
-//   };
-//   return objectComments;
-// }
