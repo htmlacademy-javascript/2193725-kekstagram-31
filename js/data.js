@@ -71,10 +71,10 @@ let comments = [];
 //photo
 const addPhoto = (id) => ({
     id: id,
-    url: 'photos/${id}.jpg'
+    url: `photos/${id}.jpg`
     description: DESCRIPTIONS[getRandomInteger(0, DESCRIPTIONS.length - 1)],
     likes: getRandomInteger(Likes.MIN, Likes.MAX),
-    comments: getAddComments(1, 30),
+    comments: getAddComments(Comments.MIN, Comments.MAX),
 });
 
 const addPhotos = () => {
@@ -86,9 +86,9 @@ const addPhotos = () => {
 
 
 //comments
-const addComment = () => ({
-  id: getRandomNumber(1, 100),
-  avatar: 'img/avatar/${getRandomNumber(Avatars.MIN, Avatars.MAX)}.svg'
+const addComment = (id) => ({
+  id: id,
+  avatar: `img/avatar/${getRandomNumber(Avatars.MIN, Avatars.MAX)}.svg`
   message: MESSAGES[getRandomInteger(0, MESSAGES.length - 1)],
   names: NAMES[getRandomInteger(0, NAMES.length - 1)],
 });
@@ -98,3 +98,6 @@ const addComments = () => {
       comments.push(addComment(i));
   }
 };
+
+export {Photos};
+export {addComments};
